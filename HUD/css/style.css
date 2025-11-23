@@ -1,0 +1,57 @@
+:root{
+  --bg:#04050a;
+  --panel:#071427;
+  --muted:#9fb0c8;
+  --accent:#6ee7b7;
+  --danger:#ff6b6b;
+  --glass:rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,Arial,Segoe UI;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  background:linear-gradient(180deg,#02030a 0%, #041426 80%);
+  color:#e6eef6;
+}
+main{text-align:center;width:980px;max-width:96%}
+h1{margin:8px 0 6px;font-size:20px}
+#gameWrap{position:relative;display:inline-block}
+canvas{
+  display:block;
+  border-radius:12px;
+  background:linear-gradient(180deg,var(--panel), #041425 140%);
+  box-shadow:0 18px 60px rgba(0,0,0,0.7), inset 0 -8px 30px rgba(0,0,0,0.45);
+  width:900px;
+  height:600px;
+}
+#overlayUI{position:absolute;left:12px;top:12px;right:12px;pointer-events:none}
+#hud{display:flex;gap:10px;align-items:center;pointer-events:auto}
+#hud > div{background:var(--glass);padding:8px 12px;border-radius:10px;font-weight:800;color:var(--muted)}
+#controls{position:absolute;right:12px;top:12px;pointer-events:auto}
+#controls button{padding:8px 12px;margin-left:8px;border-radius:10px;border:none;background:var(--accent);color:#022;font-weight:800;cursor:pointer}
+#controls button:disabled{background:#6b7280;cursor:default}
+#instructions{color:var(--muted);margin-top:10px;font-size:13px}
+
+#mobileControls{display:none;position:absolute;left:50%;transform:translateX(-50%);bottom:18px;gap:12px;pointer-events:auto}
+.btnTouch{min-width:72px;min-height:64px;border-radius:14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.05);color:white;font-size:24px;font-weight:900;box-shadow:0 10px 28px rgba(0,0,0,0.5)}
+#btnShoot{background:linear-gradient(180deg,#ff6ec7,#bf13a8);border:1px solid rgba(255,255,255,0.06)}
+
+@media (max-width:980px){
+  canvas{width:100%;height:auto}
+  #gameWrap{width:100%}
+}
+@media (max-width:720px){
+  main{width:100%}
+  h1{font-size:18px}
+  #mobileControls{display:flex}
+  #controls{display:none}
+  #hud{flex-direction:column;gap:6px}
+  #hud > div{font-size:14px;padding:10px 14px}
+  .btnTouch{min-width:72px;min-height:64px;border-radius:14px;font-size:22px}
+  canvas{height:calc(100vw * 0.67)}
+}

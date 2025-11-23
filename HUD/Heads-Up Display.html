@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>Dodger — Chaos Boss Final</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main>
+    <h1>Dodger — Chaos Boss Final</h1>
+    <div id="gameWrap">
+      <canvas id="gameCanvas" width="900" height="600"></canvas>
+      <div id="mobileControls" role="group" aria-label="mobile controls">
+        <button class="btnTouch" id="btnLeft">◀</button>
+        <button class="btnTouch" id="btnShoot">★</button>
+        <button class="btnTouch" id="btnRight">▶</button>
+      </div>
+      <div id="overlayUI">
+        <div id="hud">
+          <div id="scoreTag">Score: 0</div>
+          <div id="levelTag">Level: 1</div>
+          <div id="livesTag">Lives: ❤❤❤</div>
+          <div id="timeTag">Time: 60s</div>
+        </div>
+        <div id="controls">
+          <button id="startBtn">Start</button>
+          <button id="restartBtn" disabled>Restart</button>
+        </div>
+      </div>
+    </div>
+    <p id="instructions">← → or A/D to move, SPACE to shoot. On mobile use the big buttons. Survive the Chaos Boss.</p>
+  </main>
+  <script src="js/game.js"></script>
+</body>
+</html>
